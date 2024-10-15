@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Perizinan Penelitian</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulir Perizinan Penelitian</h2>
+        <form id="registrationForm" method="POST">
+            <label for="name">Nama Peneliti:</label>
+            <input type="text" id="name" name="name" required minlength="3">
+
+            <label for="instansi">Instansi:</label>
+            <input type="text" id="instansi" name="instansi" required minlength="3">
+            
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,13}">
+
+            <label for="Studiesname">Judul Penelitian:</label>
+            <input type="text" id="Studiesname" name="Studiesname" required minlength="3">
+
+            <label for="address">Lokasi Penelitian:</label>
+            <textarea id="address" name="address" required minlength="10"></textarea>
+            
+            <label for="studydate">Waktu Penelitian:</label>
+            <input type="date" id="studydate" name="studydate" required>
+
+            <label for="studiesname">Metode Penelitian:</label>
+            <input type="text" id="studiesname" name="studiesname" required minlength="2">
+
+            <label for="reason">Alasan Penelitian:</label>
+            <textarea id="reason" name="reason" required minlength="10"></textarea>
+
+            <label for="dukungan">Dukungan yang Diharapkan Dari Pihak Terkait:</label>
+            <textarea id="dukungan" name="dukungan" required minlength="10"></textarea>
+            
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Pilih</option>
+                <option value="male">Pria</option>
+                <option value="female">Wanita</option>
+            </select>
+            
+            <label for="city">Kota Asal:</label>
+            <input type="text" id="city" name="city" required>
+            
+            <button type="submit">Daftar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();  
+            
+            swal({
+                title: "Terimakasih!",
+                text: "Pesan anda sudah kami terima!",
+                icon: "success",
+                button: "Aww yiss!"
+            });
+        });
+    </script>
+</body>
+</html>
